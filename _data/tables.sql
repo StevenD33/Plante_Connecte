@@ -1,0 +1,17 @@
+# CREATE TABLE user(
+# id INT PRIMARY KEY AUTO_INCREMENT,
+# name VARCHAR(255) NOT NULL
+#
+# );
+#
+# CREATE TABLE htmlconvert(
+#   id INT PRIMARY KEY AUTO_INCREMENT,
+#   name VARCHAR(255) NOT NULL
+#
+# );
+#
+# CREATE TABLE mdconvert(
+#   id INT PRIMARY KEY AUTO_INCREMENT,
+#   name VARCHAR(255) NOT NULL
+#
+# )
