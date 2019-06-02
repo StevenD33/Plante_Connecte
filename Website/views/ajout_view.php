@@ -1,5 +1,8 @@
 <?php
-// Recupere toutes les tables de la BDD
+// Recupere toutes les collones de chaque tables
+
+// Recupere les colonnes de la tables donnée_capteur.... 
+// etc..
 $req = $db->query('DESCRIBE donnée_capteur;');
 $tables_donnee = $req->fetchall();
 
@@ -28,6 +31,7 @@ $tables_utilisateur = $req->fetchall();
 
     <?php include_once 'views/includes/header.php'?>
 
+<div id=form_main>
     <h1>Insertion dans la BDD</h1>
 
     <br>
@@ -47,7 +51,7 @@ $tables_utilisateur = $req->fetchall();
     <?php
     $i += 1;
     } ?>
-        <button name="envoie_donne" type="submit" class="btn btn-primary">Submit</button>
+        <input name="envoie_donne" type="submit" class="btn btn-primary">
     </form>
 
     <br>
@@ -69,7 +73,7 @@ $tables_utilisateur = $req->fetchall();
     <?php
     $i += 1;
     } ?>
-        <button name="envoie_plante" type="submit" class="btn btn-primary">Submit</button>
+        <input name="envoie_plante" type="submit" class="btn btn-primary">
     </form>
 
     <br>
@@ -91,7 +95,7 @@ $tables_utilisateur = $req->fetchall();
     <?php
     $i += 1;
     } ?>
-        <button name="envoie_planteUtilisateur" type="submit" class="btn btn-primary">Submit</button>
+        <input name="envoie_planteUtilisateur" type="submit" class="btn btn-primary">
     </form>
 
     <br>
@@ -113,8 +117,10 @@ $tables_utilisateur = $req->fetchall();
     <?php
     $i += 1;
     } ?>
-        <button name="envoie_utilisateur" type="submit" class="btn btn-primary">Submit</button>
+        <input name="envoie_utilisateur" type="submit" class="btn btn-primary">
     </form>
+
+</div>
 
     <?php include_once 'views/includes/footer.php'?>
 
