@@ -1,4 +1,5 @@
 <?php
+
 // Recupere toutes les collones de chaque tables
 
 // Recupere les colonnes de la tables donnée_capteur.... 
@@ -11,9 +12,6 @@ $tables_plante = $req->fetchall();
 
 $req = $db->query('DESCRIBE plante_utilisateur;');
 $tables_planteU = $req->fetchall();
-
-$req = $db->query('DESCRIBE utilisateur;');
-$tables_utilisateur = $req->fetchall();
 
 ?>
 
@@ -74,50 +72,6 @@ $tables_utilisateur = $req->fetchall();
     $i += 1;
     } ?>
         <input name="envoie_plante" type="submit" class="btn btn-primary">
-    </form>
-
-    <br>
-    <hr>
-    <br>
-
-    <h2><strong>Table</strong> : plante_utilisateur</h2>
-
-    <br>
-
-    <form method="POST">
-    <?php
-    $i = 0;
-    foreach ($tables_planteU as $planteU) { ?>
-        <div class="form-group">
-            <label><strong>Colonne </strong>: <?= $planteU[0] ?></label>
-            <input name="planteUtilisateur<?= $i ?>" type="text" class="form-control" id="exampleInputEmail1">
-        </div>
-    <?php
-    $i += 1;
-    } ?>
-        <input name="envoie_planteUtilisateur" type="submit" class="btn btn-primary">
-    </form>
-
-    <br>
-    <hr>
-    <br>
-
-    <h2><strong>Table</strong> : utilisateur</h2>
-
-    <br>
-    
-    <form method="POST">
-    <?php
-    $i = 0;
-    foreach ($tables_utilisateur as $utilisateur) { ?>
-        <div class="form-group">
-            <label><strong>Colonne </strong>: <?= $utilisateur[0] ?></label>
-            <input name="utilisateur<?= $i ?>" type="text" class="form-control" id="exampleInputEmail1">
-        </div>
-    <?php
-    $i += 1;
-    } ?>
-        <input name="envoie_utilisateur" type="submit" class="btn btn-primary">
     </form>
 
 </div>

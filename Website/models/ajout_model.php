@@ -8,16 +8,16 @@ if (!empty($_POST)) {
     // Formulaire Donnée_capteur
     if (isset($form_donne) && !empty($form_donne)) {
         if (isset($_POST['donne0']) && !empty($_POST['donne0']) && isset($_POST['donne1']) && !empty($_POST['donne1']) && isset($_POST['donne2']) && !empty($_POST['donne2']) && isset($_POST['donne3']) && !empty($_POST['donne3']) && isset($_POST['donne4']) && !empty($_POST['donne4']) && isset($_POST['donne5']) && !empty($_POST['donne5'])) {
-            
-            $donnee_id = $_POST['donne0'];
-            $donnee_date = $_POST['donne1'];
-            $donnee_luminosite = $_POST['donne2'];
-            $donnee_humidite = $_POST['donne3'];
-            $donnee_temperature = $_POST['donnee4'];
-            $donnee_fk_utilisateur_id = $_POST['donne5'];
 
-            $req = $db->prepare('INSERT INTO donnée_capteur (donnee_id, donnee_date , donnee_luminosite, donnee_humidite, donnee_temperature, fk_plante_utilisateur_id) VALUE (?, ?, ?, ?, ?, ?)');
-            $req->execute([$donnee_id, $donnee_date, $donnee_luminosite, $donnee_humidite, $donnee_temperature, $donnee_fk_utilisateur_id]);
+            $donnee_id = (int)$_POST['donne0'];
+            $donnee_date = $_POST['donne1'];
+            $donnee_luminosite = (int)$_POST['donne2'];
+            $donnee_humidite = (int)$_POST['donne3'];
+            $donnee_temperature = (int)$_POST['donnee4'];
+            $donnee_fk_utilisateur_id = (int)$_POST['donne5'];
+
+            $req = $db->prepare('INSERT INTO donnée_capteur (donnee_date, donnee_luminosite, donnee_humidite, donnee_temperature, fk_plante_utilisateur_id) VALUE (?, ?, ?, ?, ?)');
+            $req->execute([$donnee_date, $donnee_luminosite, $donnee_humidite, $donnee_temperature, $donnee_fk_utilisateur_id]);
         }
     }
 

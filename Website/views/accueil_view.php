@@ -4,6 +4,9 @@
 <head>
 
     <?php include_once 'views/includes/head.php'?>
+
+    <title><?= ucfirst($page) ?></title>
+    
 </head>
 <body>
 <?php include_once 'views/includes/header.php'?>
