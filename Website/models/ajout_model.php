@@ -7,7 +7,8 @@ $form_utilisateur = $_POST['envoie_utilisateur'];
 if (!empty($_POST)) {
     // Formulaire Donnée_capteur
     if (isset($form_donne) && !empty($form_donne)) {
-        if (isset($_POST['donne0']) && !empty($_POST['donne0']) && isset($_POST['donne1']) && !empty($_POST['donne1']) && isset($_POST['donne2']) && !empty($_POST['donne2']) && isset($_POST['donne3']) && !empty($_POST['donne3']) && isset($_POST['donne4']) && !empty($_POST['donne4']) && isset($_POST['donne5']) && !empty($_POST['donne5'])) {
+        if (isset($_POST['donne0']) && !empty($_POST['donne0']) && isset($_POST['donne1']) && !empty($_POST['donne1']) && isset($_POST['donne2']) && !empty($_POST['donne2']) 
+        && isset($_POST['donne3']) && !empty($_POST['donne3']) && isset($_POST['donne4']) && !empty($_POST['donne4']) && isset($_POST['donne5']) && !empty($_POST['donne5'])) {
 
             $donnee_id = (int)$_POST['donne0'];
             $donnee_date = $_POST['donne1'];
@@ -23,16 +24,22 @@ if (!empty($_POST)) {
 
     // Formulaire Plantes
     if (isset($form_plante) && !empty($form_plante)) {
-        echo 'wow plante';
+        if (isset($_POST['plante1']) && !empty($_POST['plante1']) && isset($_POST['plante2']) && !empty($_POST['plante2']) 
+        && isset($_POST['plante3']) && !empty($_POST['plante3']) && isset($_POST['plante4']) && !empty($_POST['plante4']) && isset($_POST['plante5']) && !empty($_POST['plante5']) 
+        && isset($_POST['plante6']) && !empty($_POST['plante6']) && isset($_POST['plante7']) && !empty($_POST['plante7']) && isset($_POST['plante8']) && !empty($_POST['plante8'])) {
+  
+            $nom    =   $_POST['plante1'];
+            $cat    =   $_POST['plante2'];
+            $desc   =   $_POST['plante3'];
+            $photo  =   $_POST['plante4'];
+            $hum    =   (int)$_POST['plante5'];
+            $temp   =   (int)$_POST['plante6'];
+            $lumi   =   (int)$_POST['plante7'];
+            $periode    =   $_POST['plante8'];
+
+            $req = $db->prepare('INSERT INTO plante (plante_nom, plante_categorie, plante_description, plante_photo, plante_humidite_opti, plante_temperature_opti, plante_luminosite_opti, plante_periode_floraison) VALUES ( ?, ?, ?, ?, ?, ?,?, ?)');
+            $req->execute([$nom, $cat, $desc, $photo, $hum, $temp, $lumi, $periode]);
+        }
     }
 
-    // Formulaire Plante_utilisateur
-    if (isset($form_planteU) && !empty($form_planteU)) {
-        echo 'wow planteuuuuu';
-    }
-
-    // Formulaire Utilisateur
-    if (isset($form_utilisateur) && !empty($form_utilisateur)) {
-        echo 'wow utiliiiii';
-    }
 }
