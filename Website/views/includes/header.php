@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_SESSION['pseudo']) && isset($_SESSION['pw']) && isset($_SESSION['conn_id'])) { ?>
+if (isset($_SESSION['pseudo']) && isset($_SESSION['pw']) && isset($_SESSION['conn_id']) && $_SESSION['pseudo'] !== 'admin') { ?>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="index.php">Projet UF Développement</a>
@@ -14,7 +14,7 @@ if (isset($_SESSION['pseudo']) && isset($_SESSION['pw']) && isset($_SESSION['con
                     <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item <?php if ($page == 'mesplantes') {echo 'active';}?>">
-                    <a class="nav-link" href="index.php?page=mesplantes">Ma plante <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php?page=mesplantes">Mes plantes <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -40,11 +40,11 @@ if (isset($_SESSION['pseudo']) && isset($_SESSION['pw']) && isset($_SESSION['con
                 <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item <?php if ($page == 'mesplantes') {echo 'active';}?>">
-                <a class="nav-link" href="index.php?page=mesplantes">Ma plante <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php?page=mesplantes">Mes plantes <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item <?php if ($page == 'ajout') {echo 'active';}?>">
                     <a class="nav-link" href="index.php?page=ajout">Ajout BDD <span class="sr-only">(current)</span></a>
-                </li>
+            </li>
         </ul>
     </div>
     <ul class="navbar-nav mr-auto">
@@ -55,7 +55,8 @@ if (isset($_SESSION['pseudo']) && isset($_SESSION['pw']) && isset($_SESSION['con
 </nav>
 
 <?php
-} else { ?>
+} 
+if (!isset($_SESSION['pseudo'])  && !isset($_SESSION['pw']) && !isset($_SESSION['conn_id'])) { ?>
     
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="index.php">Projet UF Développement</a>
@@ -67,9 +68,6 @@ if (isset($_SESSION['pseudo']) && isset($_SESSION['pw']) && isset($_SESSION['con
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item <?php if ($page == 'home') {echo 'active';}?>">
                     <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item <?php if ($page == 'ajout') {echo 'active';}?>">
-                    <a class="nav-link" href="index.php?page=ajout">Ajout BDD <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item <?php if ($page == 'inscription') {echo 'active';}?>">
                     <a class="nav-link" href="index.php?page=inscription">Inscription<span class="sr-only">(current)</span></a>

@@ -1,11 +1,13 @@
 body {
     padding-top: 5rem;
 }
+
 .starter-template {
     padding: 3rem 1.5rem;
     text-align: center;
 
 }
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -31,5 +33,38 @@ body {
     width: 50%;
     margin: auto;
     text-align: center;
+}
 
+#card {
+    padding: 1vh 1vh;
+}
+
+.card {
+    padding: 1vh 1vh;
+    width: 98%;
+    margin: auto;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.pic {
+    padding: 1vh 1vh;
+    width: 20%;
+    background-position: center;
+    background-size: auto;
+}
+
+.text {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#form {
+    width: 50%;
+    text-align: center;
+    margin: auto;
 }

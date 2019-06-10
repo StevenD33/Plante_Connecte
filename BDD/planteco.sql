@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 10 Juin 2019 à 17:35
+-- Généré le :  Lun 10 Juin 2019 à 18:54
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -42,7 +42,10 @@ CREATE TABLE `donnée_capteur` (
 INSERT INTO `donnée_capteur` (`donnee_id`, `donnee_date`, `donnee_luminosite`, `donnee_humidite`, `donnee_temperature`, `fk_plante_utilisateur_id`) VALUES
 (11, '2019-06-10 19:26:30', -201, 100, -10, 2),
 (12, '2019-06-10 19:26:46', -201, 100, -10, 2),
-(13, '2019-06-10 19:28:25', -201, 100, -10, 2);
+(13, '2019-06-10 19:28:25', -201, 100, -10, 2),
+(14, '2019-06-10 19:55:18', -201, 100, -10, 2),
+(15, '2019-06-10 20:49:20', -201, 100, -10, 4),
+(16, '2019-06-10 20:51:15', -201, 100, -10, 5);
 
 -- --------------------------------------------------------
 
@@ -112,7 +115,9 @@ CREATE TABLE `plante_utilisateur` (
 --
 
 INSERT INTO `plante_utilisateur` (`plante_id`, `plante_nom`, `fk_plante_id`, `fk_utilisateur_id`) VALUES
-(2, 'Mon essaie', 7, 2);
+(2, 'Mon essaie', 7, 2),
+(4, 'Wow ! pas trop cool ???', 32, 2),
+(5, 'Mon super coquelicot', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -176,7 +181,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `donnée_capteur`
 --
 ALTER TABLE `donnée_capteur`
-  MODIFY `donnee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `donnee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT pour la table `plante`
 --
@@ -186,7 +191,7 @@ ALTER TABLE `plante`
 -- AUTO_INCREMENT pour la table `plante_utilisateur`
 --
 ALTER TABLE `plante_utilisateur`
-  MODIFY `plante_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `plante_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
