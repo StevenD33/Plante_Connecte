@@ -37,7 +37,7 @@ if (!empty($_POST)) {
             $plantation    =   $_POST['plante7'];
             $periode    = $_POST['plante8'];
 
-            $req = $db->prepare('INSERT INTO plante (plante_nom, plante_description, plante_photo, plante_humidite_opti, plante_temperature_opti, plante_luminosite_opti, plant_periode_plantation, plante_periode_floraison) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)');
+            $req = $db->prepare('INSERT INTO plante (plante_nom, plante_description, plante_photo, plante_humidite_opti, plante_temperature_opti, plante_luminosite_opti, plante_periode_plantation, plante_periode_floraison) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)');
             $req->execute([$nom, $desc, $photo, $hum, $temp, $lumi, $plantation, $periode]);
         }
     }
