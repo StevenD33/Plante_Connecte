@@ -11,7 +11,5 @@ if (isset($_POST) && !empty($_POST))  {
 
         $req = $db->prepare('INSERT INTO utilisateur (utilisateur_nom, utilisateur_prenom, utilisateur_email, utilisateur_login, utilisateur_password) VALUE (?, ?, ?, ?, ?)');
         $req->execute([$nom, $prenom, $email, $pseudo, $pw]);
-
-
     }
 }
