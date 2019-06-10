@@ -68,3 +68,23 @@ body {
     text-align: center;
     margin: auto;
 }
+
+#toutes_card {
+    height: 40vh;
+    width: 98%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row; 
+}
+
+.card_donnee {
+    margin: auto;
+    border-radius: 0px 34px 34px 34px;
+    -moz-border-radius: 0px 34px 34px 34px;
+    -webkit-border-radius: 0px 34px 34px 34px;
+    padding: 5vh;
+    border: 1px solid #000000;
+    width: 25%;
+    text-align: center;
+}
