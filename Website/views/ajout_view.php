@@ -4,14 +4,8 @@
 
 // Recupere les colonnes de la tables donnée_capteur.... 
 // etc..
-$req = $db->query('DESCRIBE donnée_capteur;');
-$tables_donnee = $req->fetchall();
-
 $req = $db->query('DESCRIBE plante;');
 $tables_plante = $req->fetchall();
-
-$req = $db->query('DESCRIBE plante_utilisateur;');
-$tables_planteU = $req->fetchall();
 
 ?>
 
@@ -32,28 +26,6 @@ $tables_planteU = $req->fetchall();
 <div id=form_main>
     <h1>Insertion dans la BDD</h1>
 
-    <br>
-
-    <h2><strong>Table</strong> : donnée_capteur</h2>
-
-    <br>
-
-    <form method="POST">
-    <?php
-    $i = 0;
-    foreach ($tables_donnee as $donnee) { ?>
-        <div class="form-group">
-            <label><strong>Colonne </strong>: <?= $donnee[0] ?></label>
-            <input name="donne<?= $i ?>" type="text" class="form-control" id="exampleInputEmail1">
-        </div>
-    <?php
-    $i += 1;
-    } ?>
-        <input name="envoie_donne" type="submit" class="btn btn-primary">
-    </form>
-
-    <br>
-    <hr>
     <br>
 
     <h2><strong>Table</strong> : plante</h2>

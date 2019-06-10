@@ -29,16 +29,16 @@ if (!empty($_POST)) {
         && isset($_POST['plante6']) && !empty($_POST['plante6']) && isset($_POST['plante7']) && !empty($_POST['plante7']) && isset($_POST['plante8']) && !empty($_POST['plante8'])) {
   
             $nom    =   $_POST['plante1'];
-            $cat    =   $_POST['plante2'];
-            $desc   =   $_POST['plante3'];
-            $photo  =   $_POST['plante4'];
-            $hum    =   (int)$_POST['plante5'];
-            $temp   =   (int)$_POST['plante6'];
-            $lumi   =   (int)$_POST['plante7'];
-            $periode    =   $_POST['plante8'];
+            $desc   =   $_POST['plante2'];
+            $photo  =   $_POST['plante3'];
+            $hum    =   $_POST['plant4'];
+            $temp   =   $_POST['plante5'];
+            $lumi   =   $_POST['plante6'];
+            $plantation    =   $_POST['plante7'];
+            $periode    = $_POST['plante8'];
 
-            $req = $db->prepare('INSERT INTO plante (plante_nom, plante_categorie, plante_description, plante_photo, plante_humidite_opti, plante_temperature_opti, plante_luminosite_opti, plante_periode_floraison) VALUES ( ?, ?, ?, ?, ?, ?,?, ?)');
-            $req->execute([$nom, $cat, $desc, $photo, $hum, $temp, $lumi, $periode]);
+            $req = $db->prepare('INSERT INTO plante (plante_nom, plante_description, plante_photo, plante_humidite_opti, plante_temperature_opti, plante_luminosite_opti, plant_periode_plantation, plante_periode_floraison) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)');
+            $req->execute([$nom, $desc, $photo, $hum, $temp, $lumi, $plantation, $periode]);
         }
     }
 
