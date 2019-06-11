@@ -1,5 +1,5 @@
 var lines = document.querySelector(".lines");
-var user = "workstation$";
+var user = "Root$";
 document.addEventListener("keyup", keyup);
 function keyup(e) {
     if (e.srcElement.type == "text") {
@@ -29,7 +29,7 @@ function parseCommand(text) {
     console.log(arguments);
 
     if (!command) {
-        addLine(`terminal: command not found`);
+        addLine(`terminal: Negatif cette commande n'existe pas`);
         return;
     }
 
@@ -37,11 +37,11 @@ function parseCommand(text) {
         return e.required;
     });
     if (commandArguments.length < argumentsNeeded) {
-        addLine(`terminal: you might be missing arguments`);
+        addLine(`terminal: Négatif il te manque des arugments`);
     }
 
     if (commandArguments.length > command.arguments.length) {
-        addLine(`terminal: you might have put to many arguments`);
+        addLine(`terminal: Négatif il y'a trop d'arguments`);
     }
 
     command.exe(commandArguments);
@@ -56,7 +56,7 @@ function findCommand(commandName) {
 var commands = [
     {
         name: "help",
-        help: "This is the help command :]",
+        help: "C'est la commande d'aide :",
         arguments: [
             {
                 required: false,
@@ -98,13 +98,13 @@ var commands = [
     },
     {
         name: "time",
-        help: "Tells you the current time!",
+        help: "ça dit l'heure qu'il est !",
         arguments: [],
         exe: function() {
             var date = new Date();
             var time =
                 date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-            addLine(`terminal: ça dit l'heure qu'il est  ${time}`);
+            addLine(`Server: Il est   ${time}`);
         }
 
     },
@@ -112,10 +112,37 @@ var commands = [
         help: "Présentation de l'entreprise",
         arguments: [],
         exe: function() {
-            addLine(`terminal: Connected FLowers est une startup qui est composé de 3 personnes : `);
-            addLine(`terminal: Thibault Chef de projet et Ingénieur IOT : `);
-            addLine(`terminal: Lucas Administrateur de Base de Donnée  : `);
-            addLine(`terminal: Steven DevWeb par ci par là mais pas ouf  : `);
+            addLine(`Server: Connected FLowers est une startup qui est composé de 3 personnes  `);
+            addLine(`Server: Thibault Chef de projet et Ingénieur IOT  `);
+            addLine(`Server: Lucas Administrateur de Base de Donnée  `);
+            addLine(`Server: Steven DevWeb par ci par là mais pas ouf   `);
+
+
+        },},
+    {        name: "Projet",
+        help: "Présentation du projet",
+        arguments: [],
+        exe: function() {
+            addLine(`Server: L'objectif de ce projet est de créer une plante connecté qui communique avec une BDD   `);
+            addLine(`Server: Et ensuite la BDD communique avec le site web  `);
+
+
+        },},
+    {        name: "SiteWeb",
+        help: "Présentation du Site web ",
+        arguments: [],
+        exe: function() {
+            addLine(`Server: Le site permet d'afficher les données de sa plante connecté et de voir en temps réel les changement `);
+            addLine(`Server: Pour cela il faut d'abord s'inscrire avec un mot de passe FORT et chiffré en SHA512   `);
+
+
+        },},
+    {        name: "Hack",
+        help: "Hack ",
+        arguments: [],
+        exe: function() {
+            addLine(`Server: T'a vraiment cru que t'allais me pwned comme ça ? t'es vraiment naif `);
+            addLine(`Server: Aller hop ça dégage   `);
 
 
         },}
