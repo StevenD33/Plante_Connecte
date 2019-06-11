@@ -17,7 +17,7 @@ void setup() {
     capteur.settings.commInterface = I2C_MODE; 
     capteur.settings.I2CAddress = 0x76;
     capteur.settings.runMode = 3; 
-    capteur.settings.tStandby = 0;
+    capteur.settings.tStandby = 4;
     capteur.settings.filter = 0;
     capteur.settings.tempOverSample = 1 ;
     capteur.settings.pressOverSample = 1;
