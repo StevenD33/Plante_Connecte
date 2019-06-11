@@ -1,6 +1,6 @@
 # Importation des Bibliothèques
-import serial
-import mysql.connector
+import serial # Permet de réaliser facilement une liaison via USB entre un PC et une carte arduino
+import mysql.connector # PErmet de faire une liason avec une BDD mysql
 
 def recupDonnée(id_utilisateu):
     # Connection à la base de donnée
