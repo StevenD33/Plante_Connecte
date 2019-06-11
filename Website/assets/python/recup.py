@@ -13,7 +13,7 @@ def recupDonnée(id_utilisateu):
 
     # Connection aux capteurs
     ser = serial.Serial('COM5', baudrate = 9600, timeout=1)
-
+    
     insert = ('INSERT INTO donnée_capteur '
             ' ( donnee_date, donnee_luminosite, donnee_humidite, donnee_temperature, fk_plante_utilisateur_id )'
             ' VALUE (CURRENT_TIMESTAMP(), 1 , 2 , 3 , '+ str(id_utilisateu) +')')
@@ -23,6 +23,8 @@ def recupDonnée(id_utilisateu):
     while len(data) != 1:
         del data[-1]
     data = data[0].split(' ')
+    
+    # Insertion de chiffre dans data sous forme de liste 
     for chiffre in data:
         if chiffre == data[0]:
             insert = insert.replace(' 3 ', chiffre)
