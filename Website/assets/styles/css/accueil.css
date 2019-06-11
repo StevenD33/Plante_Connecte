@@ -1,0 +1,104 @@
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+    background: #222;
+    font-family: "Karla", sans-serif;
+    color: #fff;
+    height: 100%;
+}
+
+body {
+    display: flex;
+}
+
+.program {
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+.titlebar {
+    height: 40px;
+}
+.title {
+    display: inline-block;
+    margin: 12px 5px;
+    vertical-align: top;
+    font-size: 13px;
+}
+.actions {
+    display: inline-block;
+    padding-left: 10px;
+}
+.action {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background: #777;
+    border-radius: 100%;
+    margin: 13px 5px 10px 0px;
+    cursor: pointer;
+}
+.close:hover {
+     background: #f33;
+ }
+.minimize:hover {
+     background: #ff1;
+ }
+.expand:hover {
+     background: #493;
+ }
+.terminal {
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.lines {
+    flex: 1;
+    padding: 10px 10px 0px 10px;
+    overflow: auto;
+}
+.line {
+    min-height: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+warn {
+    color: #f45;
+}
+info {
+    color: #90caf9;
+}
+yay {
+    color: #294;
+}
+
+.input {
+    display: flex;
+}
+.user {
+    width: auto;
+    padding: 10px 10px;
+    vertical-align: baseline;
+}
+input {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    outline: none;
+    padding: 10px 0px;
+    flex: 1;
+    border: none;
+    font-size: 13px;
+}
