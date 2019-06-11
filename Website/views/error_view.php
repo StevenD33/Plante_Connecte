@@ -3,7 +3,7 @@
 <head>
 
     <?php include_once 'views/includes/head.php'?>
-
+    <link rel="stylesheet" type="text/css" href="<?= PATH?>assets/styles/css/error_page.css">
     <title><?= ucfirst($page) ?></title>
 </head>
 
@@ -11,7 +11,15 @@
 
     <?php include_once 'views/includes/header.php'?>
 
-    <h1>Erreur 404 ! Cette page n'existe pas !</h1>
+    <div class="wrapper">
+        <h1>Hmm.</h1>
+        <p>tu es perdu ? laisse moi te guider </p>
+        <div class="buttons"><a href="<?= PATH ?>accueil">home</a><br/></div>
+    </div>
+    <div class="space">
+        <div class="blackhole"></div>
+        <div class="ship"></div>
+    </div>
 
     <?php include_once 'views/includes/footer.php'?>
 
